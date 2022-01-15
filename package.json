@@ -1,0 +1,23 @@
+{
+  "name": "cbic-xe-rate-api",
+  "version": "1.0.0",
+  "description": "API for CBIC exchange rate",
+  "main": "index.ts",
+  "scripts": {
+    "start": "ts-node index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sourabh Verma <sourabh.coder@gmail.com> (https://github.com/sourabhv)",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "moment": "^2.29.1",
+    "node-fetch": "2.6.1",
+    "node-html-parser": "^5.2.0",
+    "pdfjs-dist": "^2.12.313"
+  },
+  "devDependencies": {
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  }
+}

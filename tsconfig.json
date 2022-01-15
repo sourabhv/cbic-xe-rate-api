@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "target": "es6",
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noImplicitReturns": true,
+    "useUnknownInCatchVariables": false,
+    "noImplicitAny": false,
+    "incremental": false,
+    "outDir": "dist"
+  },
+  "include": ["."],
+  "exclude": ["node_modules"]
+}
