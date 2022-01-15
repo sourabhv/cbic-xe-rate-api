@@ -11,21 +11,7 @@ async function getHTMLContent(year: number) {
         "content-type": "application/x-www-form-urlencoded",
       },
     }
-    // body: `year=${year}`,
   );
-
-  // axios.post(authServerUrl + token_access_path,
-  //   querystring.stringify({
-  //           username: 'abcd', //gave the values directly for testing
-  //           password: '1235!',
-  //           client_id: 'user-client'
-  //   }), {
-  //     headers: {
-  //       "Content-Type": "application/x-www-form-urlencoded"
-  //     }
-  //   }).then(function(response) {
-  //       console.log(response);
-  //   });
 
   return (await response.data) as string;
 }
