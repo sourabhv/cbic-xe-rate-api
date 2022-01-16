@@ -1,4 +1,4 @@
-import { fetchURLs } from "./cbic-urls";
+import { URLType } from ".";
 import { Currency, parseRate } from "./pdf-parser";
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -11,26 +11,24 @@ export type Result = {
   eRate: number;
 };
 
-export async function fetchRatesForYearAndCurrency(
-  year: number,
+export async function processUrlsForCurrency(
+  urls: URLType[],
   currency: Currency
 ): Promise<Result[]> {
-  const urls = await fetchURLs(year);
-  const rates = [];
-
+  const rates: Result[] = [];
   for (let i = 0; i < urls.length; i++) {
-    console.log(`Parsing ${i}, ${urls[i].url}`);
+    console.log(`Parsing PDF ${i + 1}/${urls.length}`);
     const pdfUrl = urls[i].url;
     let results;
     try {
       results = await parseRate(pdfUrl, [currency]);
     } catch (err) {
-      console.error(`Error fetching ${pdfUrl}`);
+      console.error(`Error fetching ${pdfUrl}, retrying...`);
       await delay(5000);
       results = await parseRate(pdfUrl, [currency]);
     }
 
-    await delay(200);
+    await delay(250);
 
     const currencyResults = results[currency];
     if (currencyResults) {

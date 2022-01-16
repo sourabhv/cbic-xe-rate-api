@@ -61,8 +61,6 @@ export async function parseRate(
   pdfUrl: string,
   currencies: Currency[]
 ): Promise<RateResults> {
-  console.log(`Fetching ${pdfUrl}`);
-
   const pdf = await pdfjs.getDocument({
     url: pdfUrl,
     verbosity: 0,
