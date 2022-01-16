@@ -3,3 +3,7 @@ node_modules
 .vscode
 firebase-debug.log
 .firebaserc
+
+ui-debug.log
+firestore-debug.log
+.runtimeconfig.json
